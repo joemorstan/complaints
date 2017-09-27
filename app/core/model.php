@@ -65,7 +65,7 @@ class Model {
             return $item;
 
         } catch (PDOException $e) {
-            $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -103,7 +103,7 @@ class Model {
             return true;
 
         } catch (PDOException $e) {
-            $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -137,7 +137,7 @@ class Model {
             $rows = $stmt->fetchColumn();
 
         } catch (PDOException $e) {
-            return false;
+            echo $e->getMessage();
         }
 
         //number of pages
@@ -159,7 +159,7 @@ class Model {
             $data['items'] = $stmt->fetchAll();
 
         } catch (PDOException $e) {
-            return false;
+            echo $e->getMessage();
         }
 
         return $data;
